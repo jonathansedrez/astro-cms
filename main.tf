@@ -9,13 +9,14 @@ terraform {
   required_version = ">= 1.2"
 }
 
-provider "aws" { 
+provider "aws" {
   region = "us-east-1"
   access_key = "test" # LocalStack only
   secret_key = "test" # LocalStack only
   skip_credentials_validation = true # LocalStack only
   skip_metadata_api_check     = true # LocalStack only
   skip_requesting_account_id  = true # LocalStack only
+  s3_use_path_style           = true # LocalStack only
 
   endpoints {
     s3 = "http://localhost:4566" # LocalStack only
